@@ -1,0 +1,21 @@
+{
+    "name": "repo-starrer",
+    "version": "1.0.0",
+    "description": "Frontend Coding Challenge for verkstedt",
+    "main": "server.mjs",
+    "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/marek-saji/repo-starrer.git"
+    },
+    "keywords": [],
+    "author": "Marek ‘saji’ Augustynowicz <marek.aug@gmail.com> (http://noplacelikecode.redrice.io/)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/marek-saji/repo-starrer/issues"
+    },
+    "homepage": "https://github.com/marek-saji/repo-starrer",
+    "dependencies": {},
+    "devDependencies": {}
+}
