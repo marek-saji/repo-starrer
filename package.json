@@ -2,8 +2,16 @@
     "name": "repo-starrer",
     "version": "1.0.0",
     "description": "Frontend Coding Challenge for verkstedt",
-    "main": "server.mjs",
+    "type": "module",
+    "main": "src/server/index.js",
+    "module": "src/server/index.js",
+    "engines": {
+        "node": ">13.0.0"
+    },
     "scripts": {
+        "dev": "export PORT=3000 BS_PORT=4000; browser-sync -f static/ --port=$BS_PORT http://localhost:$PORT & chokidar --initial --silent src/server/ static/render-item.mjs -c 'npm start & sleep 0.5 && browser-sync reload --port=$BS_PORT & wait' & wait",
+        "start": "node --experimental-modules src/server/",
+        "lint": "eslint static src"
     },
     "repository": {
         "type": "git",
@@ -16,6 +24,19 @@
         "url": "https://github.com/marek-saji/repo-starrer/issues"
     },
     "homepage": "https://github.com/marek-saji/repo-starrer",
-    "dependencies": {},
-    "devDependencies": {}
+    "dependencies": {
+        "escape-html": "^1.0.3",
+        "express": "^4.17.1",
+        "express-es6-template-engine": "^2.2.0",
+        "node-fetch": "^2.6.0"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "eslint": "^6.7.2"
+    },
+    "browserlist": [
+        "> 1%",
+        "not dead",
+        "last 3 versions"
+    ]
 }

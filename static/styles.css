@@ -1,0 +1,280 @@
+/* TODO Stylelint */
+
+/* TODO env() with postcss-env-function */
+html
+{
+  /* Modular scale. base=1rem, ratio: 3/2 */
+  --size-0: 1rem;
+  --size-1: 1.5rem;
+  --size-2: 2.25rem;
+  --size-3: 3.375rem;
+
+  --line-height: var(--size-1);
+  --doubleline-height: calc(var(--size-1) * 2);
+  --halfline-height: calc(var(--size-1) / 2);
+  --horizontal-spacing: var(--size-1);
+
+  --brand-colour-fg: hsl(340, 80%, 35%);
+  --brand-colour-bg: pink;
+  --action-colour: orangered;
+  --link-colour: orangered;
+  --visited-link-colour: purple;
+  --active-link-colour: red;
+
+  --star-size: var(--size-2);
+}
+
+html
+{
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  height: 100%;
+  margin: 0;
+}
+
+body
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after
+{
+  box-sizing: inherit;
+}
+
+
+a
+{
+  color: var(--link-colour);
+}
+
+a:visited
+{
+  color: var(--visited-link-colour);
+}
+
+a:focus,
+a:active
+{
+  color: var(--active-link-colour);
+}
+
+a:focus:not(:focus-visible)
+{
+  color: var(--link-colour);
+}
+
+a:focus-visible
+{
+  color: var(--active-link-colour);
+}
+
+
+/* header */
+
+.header
+{
+  color: var(--brand-colour-fg);
+  background: var(--brand-colour-bg);
+  margin:
+    0
+    0
+    var(--line-height);
+}
+
+.header__name
+{
+  font-size: var(--size2);
+  text-align: center;
+  margin:
+    var(--doubleline-height)
+    var(--horizontal-spacing);
+  text-transform: uppercase;
+}
+
+@media (min-width: 10em)
+{
+  .header__name
+  {
+    font-size: 7vw;
+  }
+}
+
+
+/* mainContent */
+
+.mainContent
+{
+  margin:
+    0
+    0
+    var(--line-height);
+}
+
+
+
+/* footer */
+
+.footer
+{
+  flex: 0 0 auto;
+  background-color: silver;
+  padding:
+    var(--halfline-height)
+    var(--horizontal-spacing);
+}
+
+
+
+/* repoList */
+
+.repoList,
+.repoList__item
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.repoList
+{
+  margin:
+    0
+    var(--horizontal-spacing)
+    var(--line-height);
+}
+
+.repoList__item + .repoList__item
+{
+  margin-top: var(--doubleline-height);
+}
+
+@supports (display: grid)
+{
+  @media (min-width: 25em)
+  {
+    .repoList
+    {
+      display: grid;
+      grid-gap:
+        var(--doubleline-height)
+        var(--horizontal-spacing);
+      grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    }
+
+    .repoList__item + .repoList__item
+    {
+      margin-top: 0;
+    }
+  }
+}
+
+
+/* repo */
+
+.repo
+{
+  --heading-size: var(--size-1);
+  position: relative;
+  padding-left: calc(var(--horizontal-spacing) * 0.75 + var(--star-size));
+}
+
+.repo__heading
+{
+  font-size: var(--heading-size);
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+.repo__owner,
+.repo__name
+{
+  text-decoration-skip-ink: auto;
+}
+
+.repo__ownerAvatar
+{
+  vertical-align: middle;
+  height: var(--size-1);
+  margin-right: 0.33ch;
+}
+
+.repo__heading,
+.repo__description,
+.repo__homepage
+{
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+/* FIXME supports :checked */
+
+.repo__starrer,
+.repo__starrerLabel::before
+{
+  display: block;
+  width: var(--star-size);
+  height: var(--star-size);
+}
+
+.repo__starrer
+{
+  overflow: hidden;
+  position: absolute;
+  top: calc((var(--heading-size) - var(--star-size)) / 2);
+  left: 0;
+}
+
+.repo__starrerInput
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.repo__starrerLabel::before
+{
+  content: '☆';
+  font-size: var(--star-size);
+  line-height: var(--star-size);
+  text-align: center;
+}
+
+/* TODO Animate */
+.repo__starrer :checked ~ .repo__starrerLabel::before
+{
+  content: '★';
+  color: hsl(36, 100%, 50%);
+}
+
+
+/* attributesList */
+
+.attributesList,
+.attributesList__item
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.attributesList
+{
+  --spacing: 1ch;
+  margin-left: calc(-1 * var(--spacing));
+}
+
+.attributesList__item
+{
+  display: inline-block;
+  margin-left: var(--spacing);
+}

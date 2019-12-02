@@ -1,0 +1,39 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "env": {
+        "es2020": true,
+        "browser": true
+    },
+    "rules": {
+    },
+    "overrides": [
+        {
+            "files": "src/**/*.test.js",
+            "env": {
+                "jest": true
+            }
+        },
+        {
+            "files": "src/server/**",
+            "env": {
+                "node": true
+            }
+        },
+        {
+            "files": "src/static/service-worker.js",
+            "env": {
+                "serviceworker": true
+            }
+        },
+        {
+            "files": "src/static/**/*.js",
+            "env": {
+                "browser": true
+            }
+        }
+    ]
+}
