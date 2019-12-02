@@ -1,21 +1,43 @@
 {
-    "name": "repo-starrer",
-    "version": "1.0.0",
-    "description": "Frontend Coding Challenge for verkstedt",
-    "main": "server.mjs",
-    "scripts": {
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/marek-saji/repo-starrer.git"
-    },
-    "keywords": [],
-    "author": "Marek ‘saji’ Augustynowicz <marek.aug@gmail.com> (http://noplacelikecode.redrice.io/)",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/marek-saji/repo-starrer/issues"
-    },
-    "homepage": "https://github.com/marek-saji/repo-starrer",
-    "dependencies": {},
-    "devDependencies": {}
+  "name": "repo-starrer",
+  "version": "1.0.0",
+  "description": "Frontend Coding Challenge for verkstedt",
+  "author": "Marek ‘saji’ Augustynowicz <marek.aug@gmail.com> (http://noplacelikecode.redrice.io/)",
+  "license": "ISC",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marek-saji/repo-starrer.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/marek-saji/repo-starrer/issues"
+  },
+  "homepage": "https://github.com/marek-saji/repo-starrer",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
