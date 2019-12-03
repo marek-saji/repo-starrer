@@ -1,0 +1,55 @@
+/* TODO Disappear when un-favouriting */
+
+.repo
+{
+  --heading-size: var(--size-1);
+  position: relative;
+  padding-left: calc(var(--horizontal-spacing) * 0.75 + var(--star-size));
+}
+
+.repo__heading
+{
+  font-size: var(--heading-size);
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+.repo__owner,
+.repo__name
+{
+  text-decoration-skip-ink: auto;
+}
+
+.repo__owner
+{
+  display: inline-block;
+}
+
+.repo__ownerAvatar
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--size-1);
+  height: var(--size-1);
+  margin-right: 0.33ch;
+}
+
+.repo__heading,
+.repo__description,
+.repo__homepage
+{
+  display: block;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+@supports (text-overflow: ellipsis)
+{
+  .repo__homepage
+  {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,28 @@
+.header
+{
+  color: var(--brand-colour-fg);
+  background: var(--brand-colour-bg);
+  margin:
+    0
+    0
+    var(--line-height);
+}
+
+.header__name
+{
+  font-size: var(--size2);
+  text-align: center;
+  margin:
+    var(--doubleline-height)
+    var(--horizontal-spacing);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@media (min-width: 10em)
+{
+  .header__name
+  {
+    font-size: 7vw;
+  }
+}

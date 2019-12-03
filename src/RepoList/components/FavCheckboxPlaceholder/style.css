@@ -1,0 +1,5 @@
+:not(:checked) > .favCheckbox__label--placeholder::before
+{
+  content: '★';
+  color: var(--placeholder-colour);
+}

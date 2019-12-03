@@ -1,0 +1,7 @@
+.footer
+{
+  background-color: silver;
+  padding:
+    var(--halfline-height)
+    var(--horizontal-spacing);
+}

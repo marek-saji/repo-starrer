@@ -1,0 +1,22 @@
+.menu
+{
+  text-align: center;
+  margin-bottom: var(--line-height);
+}
+
+a.menu__link
+{
+  display: inline-block;
+  margin:
+    0
+    calc(var(--horizontal-spacing) / 2);
+  padding-bottom: 0.25ex;
+  text-decoration: none;
+  font-size: var(--size-1);
+  color: var(--brand-colour-fg);
+}
+
+a.menu__link--active
+{
+  border-bottom: currentColor solid 0.5ex;
+}

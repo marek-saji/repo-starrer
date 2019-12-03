@@ -1,0 +1,11 @@
+.alert
+{
+  margin:
+    var(--line-height)
+    var(--horizontal-spacing);
+  padding:
+    var(--halfline-height)
+    var(--horizontal-spacing);
+  border: solid hsl(40, 90%, 60%);
+  border-radius: 0.25em;
+}

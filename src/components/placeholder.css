@@ -1,0 +1,12 @@
+.placeholder
+{
+  pointer-events: none;
+  color: var(--placeholder-colour);
+  background-color: currentColor;
+  /* TODO Animation */
+}
+
+.placeholder--inline
+{
+  padding-right: 10ch;
+}

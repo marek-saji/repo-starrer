@@ -1,0 +1,40 @@
+.repoList,
+.repoList__item
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.repoList
+{
+  margin:
+    0
+    var(--horizontal-spacing)
+    var(--line-height);
+}
+
+.repoList__item + .repoList__item
+{
+  margin-top: var(--doubleline-height);
+}
+
+@supports (display: grid)
+{
+  @media (min-width: 25em)
+  {
+    .repoList
+    {
+      display: grid;
+      grid-gap:
+        var(--doubleline-height)
+        var(--horizontal-spacing);
+      grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    }
+
+    .repoList__item + .repoList__item
+    {
+      margin-top: 0;
+    }
+  }
+}

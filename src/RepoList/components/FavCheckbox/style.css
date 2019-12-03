@@ -1,0 +1,90 @@
+/**
+ * Prepending :not(:checked) to all selectors so that browsers that do
+ * not support :checked get simple, but usable checkbox
+ */
+
+:not(:checked) > .favCheckbox,
+:not(:checked) > .favCheckbox__label::before,
+:not(:checked) > .favCheckbox__label::after
+{
+  display: block;
+  width: var(--star-size);
+  height: var(--star-size);
+}
+
+:not(:checked) > .favCheckbox
+{
+  overflow: hidden;
+  position: absolute;
+  top: calc((var(--heading-size) - var(--star-size)) / 2);
+  left: 0;
+}
+
+:not(:checked) > .favCheckbox__input
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+:not(:checked) > .favCheckbox__label::before,
+:not(:checked) > .favCheckbox__label::after
+{
+  position: absolute;
+  top: calc(-1 * var(--star-size));
+  left: 0;
+  font-size: var(--star-size);
+  line-height: var(--star-size);
+  text-align: center;
+}
+
+:not(:checked) > .favCheckbox__label::before
+{
+  content: '☆';
+  color: hsl(0, 0%, 25%);
+}
+
+:not(:checked) > .favCheckbox__label::after
+{
+  content: '';
+  color: hsl(36, 100%, 50%);
+}
+
+:not(:checked) > .favCheckbox :checked ~ .favCheckbox__label::after
+{
+  content: '★';
+}
+
+@supports (transform: scale(1))
+{
+  @media (prefers-reduced-motion: no-preference)
+  {
+    :not(:checked) > .favCheckbox__label::after
+    {
+      content: '★';
+      transform-origin: center center;
+      transform: scale(0);
+      transition: transform ease-out 200ms;
+    }
+
+    :not(:checked) > .favCheckbox :checked ~ .favCheckbox__label::before
+    {
+      content: '';
+    }
+
+    :not(:checked) > .favCheckbox :checked ~ .favCheckbox__label::after
+    {
+      transform: scale(1);
+      transition: transform cubic-bezier(0.5, 0, 0.75, 3) 300ms;
+    }
+  }
+}
+
+:not(:checked) > .favCheckbox__label
+{
+  position: absolute;
+  top: var(--star-size);
+}

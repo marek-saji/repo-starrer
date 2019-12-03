@@ -1,0 +1,7 @@
+.mainContent
+{
+  margin:
+    0
+    0
+    var(--line-height);
+}

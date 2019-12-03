@@ -1,3 +1,6 @@
+// TODO Try network for a short time, then fall back to cache
+// TODO Cache last API call, ignore the date
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
