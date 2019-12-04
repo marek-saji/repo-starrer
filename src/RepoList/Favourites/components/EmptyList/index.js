@@ -8,11 +8,11 @@ function EmptyFavouritesRepoList ()
   return (
     <Alert heading="Nothing here, yet">
       <p>
-        Repositories starred on the
+        Go
         {' '}
-        <Link to={HOME}>main list</Link>
+        <Link to={HOME}>browse repositories</Link>
         {' '}
-        will be visible here.
+        and star something.
       </p>
     </Alert>
   );
