@@ -21,7 +21,7 @@ class NetworkConnector extends PureComponent
 
   componentDidMount ()
   {
-    this.Network();
+    this.fetch();
   }
 
   componentWillUnmount ()
@@ -45,8 +45,9 @@ class NetworkConnector extends PureComponent
     };
   }
 
-  async Network ()
+  async fetch ()
   {
+    // TODO Caching
     const { signal } = this.abortController;
     try
     {
