@@ -14,10 +14,13 @@ class RepoList extends Component
     children: PropTypes.func.isRequired,
   };
 
-  render ()
+  state = {
+    language: '',
+  };
+
+  getLanguages ()
   {
-    /* TODO LanguageSelect
-    const languages = Array.from(this.props.items.reduce(
+    const langsSet = this.props.items.reduce(
       (carry, { language }) => {
         if (language)
         {
@@ -26,17 +29,56 @@ class RepoList extends Component
         return carry;
       },
       new Set()
-    ).values()).sort();
-        <select>
-          <option value="*">All</option>
-          {languages.map(lang => <option>{lang}</option>)}
-        </select>
-      */
+    );
+    if (this.state.language)
+    {
+      langsSet.add(this.state.language);
+    }
 
+    return Array.from(langsSet.values()).sort();
+  }
+
+  handleLanguageChange = event => {
+    this.setState({ language: event.target.value });
+  };
+
+  render ()
+  {
+    const { language } = this.state;
+    const languages = this.getLanguages();
+
+    let filteredItems = this.props.items;
+    if (language !== '')
+    {
+      filteredItems = filteredItems.filter(item => item.language === language );
+    }
+
+    // FIXME Filtering should look different
+    //       - Changing language should change URL
+    //       - Filter should be in a parent component that renders
+    //         filters and RepoList or EmptyList with proper message
+    //         (e.g. No repositories with chosen language)
     return (
       <Fragment>
+        <div className="repoList__filters">
+          <select
+            value={language}
+            onChange={this.handleLanguageChange}
+            aria-label="Show only repositories written in"
+            className="repoList__langChooser"
+          >
+            <option key="" value="">
+              All languages
+            </option>
+            {languages.map(lang => (
+              <option key={lang}>
+                {lang}
+              </option>
+            ))}
+          </select>
+        </div>
         <ol className="repoList">
-          {this.props.items.map(item => (
+          {filteredItems.map(item => (
             <li key={item.id} className="repoList__item">
               {this.props.children(item)}
             </li>

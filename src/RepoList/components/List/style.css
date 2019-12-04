@@ -38,3 +38,9 @@
     }
   }
 }
+
+.repoList__filters
+{
+  text-align: left;
+  text-align: end;
+}
