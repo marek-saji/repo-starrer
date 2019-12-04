@@ -4,16 +4,16 @@ import './style.css';
 
 class FavCheckboxPlaceholder extends Component
 {
-  render ()
-  {
-    return (
-      <span className="favCheckbox">
-        <span className="favCheckbox__label favCheckbox__label--placeholder">
+    render ()
+    {
+        return (
+            <span className="favCheckbox">
+                <span className="favCheckbox__label favCheckbox__label--placeholder">
           Favourite
-        </span>
-      </span>
-    );
-  }
+                </span>
+            </span>
+        );
+    }
 }
 
 export default FavCheckboxPlaceholder;

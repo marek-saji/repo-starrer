@@ -5,22 +5,22 @@ import './style.css';
 class Alert extends PureComponent
 {
   static propTypes = {
-    heading: PropTypes.string.isRequired,
-    children: PropTypes.node,
+      heading: PropTypes.string.isRequired,
+      children: PropTypes.node,
   };
 
   static defaultTypes = {
-    children: null,
+      children: null,
   };
 
   render ()
   {
-    return (
-      <div className="alert">
-        <h2>{this.props.heading}</h2>
-        {this.props.children}
-      </div>
-    );
+      return (
+          <div className="alert">
+              <h2>{this.props.heading}</h2>
+              {this.props.children}
+          </div>
+      );
   }
 }
 

@@ -8,5 +8,5 @@ function toIsoDate (date)
 }
 
 export {
-  toIsoDate,
+    toIsoDate,
 };

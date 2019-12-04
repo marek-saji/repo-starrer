@@ -5,16 +5,16 @@ import './style.css';
 class MainContent extends PureComponent
 {
   static propTypes = {
-    children: PropTypes.node,
+      children: PropTypes.node,
   };
 
   render ()
   {
-    return (
-      <main className="mainContent">
-        {this.props.children}
-      </main>
-    );
+      return (
+          <main className="mainContent">
+              {this.props.children}
+          </main>
+      );
   }
 }
 

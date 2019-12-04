@@ -3,11 +3,11 @@ import './style.css';
 
 function Header ()
 {
-  return (
-    <footer className="footer">
+    return (
+        <footer className="footer">
       &copy; Marek Augustynowicz
-    </footer>
-  );
+        </footer>
+    );
 }
 
 export default Header;

@@ -28,7 +28,10 @@
     "react-scripts": "3.2.0"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "indent": ["error", 4]
+    }
   },
   "browserslist": {
     "production": [

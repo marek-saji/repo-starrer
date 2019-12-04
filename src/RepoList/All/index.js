@@ -7,47 +7,47 @@ import NetworkError from '../components/NetworkError';
 
 function RepoListAll ()
 {
-  const date = new Date();
-  date.setDate(date.getDate() - 7);
+    const date = new Date();
+    date.setDate(date.getDate() - 7);
 
-  return (
-    <NetworkConnector since={date}>
-      {remote => (
-        <StoreConnector>
-          {store => {
-            const loading = remote.loading || store.loading;
+    return (
+        <NetworkConnector since={date}>
+            {remote => (
+                <StoreConnector>
+                    {store => {
+                        const loading = remote.loading || store.loading;
 
-            if (!loading && remote.error) {
-              return <NetworkError />;
-            }
+                        if (!loading && remote.error) {
+                            return <NetworkError />;
+                        }
 
-            let items = [];
-            if (!store.loading) {
-              items = remote.items.map(item => ({
-                ...item,
-                favourite: store.isItemFavourite(item),
-              }));
-            }
+                        let items = [];
+                        if (!store.loading) {
+                            items = remote.items.map(item => ({
+                                ...item,
+                                favourite: store.isItemFavourite(item),
+                            }));
+                        }
 
-            return (
-              <List
-                loading={loading}
-                items={items}
-              >
-                {item => (
-                  <Repo
-                    {...item}
-                    loading={loading}
-                    toggleFavourite={() => store.toggleItemFavourite(item)}
-                  />
-                )}
-              </List>
-            );
-          }}
-        </StoreConnector>
-      )}
-    </NetworkConnector>
-  );
+                        return (
+                            <List
+                                loading={loading}
+                                items={items}
+                            >
+                                {item => (
+                                    <Repo
+                                        {...item}
+                                        loading={loading}
+                                        toggleFavourite={() => store.toggleItemFavourite(item)}
+                                    />
+                                )}
+                            </List>
+                        );
+                    }}
+                </StoreConnector>
+            )}
+        </NetworkConnector>
+    );
 }
 
 export default RepoListAll;

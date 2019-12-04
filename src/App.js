@@ -10,23 +10,23 @@ import All from './RepoList/All';
 import Favourites from './RepoList/Favourites';
 
 function App() {
-  return (
-    <Router>
-      <Header />
-      <Menu />
-      <MainContent>
-        <Switch>
-          <Route exact path={paths.HOME}>
-            <All />
-          </Route>
-          <Route exact path={paths.FAVOURITES}>
-            <Favourites />
-          </Route>
-        </Switch>
-      </MainContent>
-      <Footer />
-    </Router>
-  );
+    return (
+        <Router>
+            <Header />
+            <Menu />
+            <MainContent>
+                <Switch>
+                    <Route exact path={paths.HOME}>
+                        <All />
+                    </Route>
+                    <Route exact path={paths.FAVOURITES}>
+                        <Favourites />
+                    </Route>
+                </Switch>
+            </MainContent>
+            <Footer />
+        </Router>
+    );
 }
 
 export default App;

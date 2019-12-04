@@ -7,20 +7,20 @@ const ITEMS_COUNT = 24;
 class ListPlaceholder extends PureComponent
 {
   static propTypes = {
-    children: PropTypes.func.isRequired,
+      children: PropTypes.func.isRequired,
   };
 
   render ()
   {
-    return (
-      <ol className="repoList repoList--loading">
-        {[...Array(ITEMS_COUNT)].map((_, i) => (
-          <li key={i} className="repoList__item">
-            {this.props.children({})}
-          </li>
-        ))}
-      </ol>
-    );
+      return (
+          <ol className="repoList repoList--loading">
+              {[...Array(ITEMS_COUNT)].map((_, i) => (
+                  <li key={i} className="repoList__item">
+                      {this.props.children({})}
+                  </li>
+              ))}
+          </ol>
+      );
   }
 }
 
